@@ -98,7 +98,7 @@ const delUser = (req, res) => {
 
 module.exports = (router) => {
 	router.post('/register', Register),
-		router.post('/login', Login),
-		router.get('/user', checkToken, User),
-		router.post('/delUser', checkToken, delUser)
+	router.post('/login', Login),
+	router.get('/user', checkToken, User),
+	router.post('/delUser', checkToken, delUser)
 }

@@ -27,12 +27,12 @@
     </el-form>
   </div>
 </template>
-·
+
 <script>
 import * as types from '../store/types'
 import api from '../axios'
 export default {
-    name: 'login',
+    name: 'login222',
     data() {
         // 密码安全性要求
         let validatePass1 = (rule, value, callback) => {

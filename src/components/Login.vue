@@ -39,7 +39,7 @@ import Register from '@/components/Register.vue'
 import * as types from '../store/types'
 import api from '../axios'
 export default {
-    name: 'login',
+    name: 'login111',
     data() {
         return {
             dynamicValidateForm: {
