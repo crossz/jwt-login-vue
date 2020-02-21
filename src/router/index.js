@@ -8,9 +8,9 @@ const router = new Router({
 	routes: [{
 			path: '/',
 			name: 'Hello',
-			component(resolve) {
+			component(rr) {
 				require.ensure(['@/components/Hello.vue'], () => {
-					resolve(require('@/components/Hello.vue'));
+					rr(require('@/components/Hello.vue'));
 				});
 			},
 			// 设置 mata 字段，表示该字段需要验证
@@ -52,6 +52,11 @@ const router = new Router({
 // 验证 token，存在才跳转
 router.beforeEach((to, from, next) => {
 	let token = localStorage.getItem('token')
+
+
+	console.log(to);
+
+
 	if(to.meta.requireAuth) {
 		if(token) {
 			next()

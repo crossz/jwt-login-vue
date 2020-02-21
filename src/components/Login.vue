@@ -120,8 +120,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 .el-col {
-    // margin-bottom:
+    
 }
 </style>
