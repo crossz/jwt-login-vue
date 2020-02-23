@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '../store/index.js'
-import { LOGIN } from '../store/types.js'
 import Hello from '@/components/Hello.vue'
 
 // var myComponent =() => import('../components/Login.vue');
