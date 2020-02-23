@@ -4,19 +4,25 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
-const routes = require('./server/routes/user.js')
 const config = require('config-lite')
 const compression = require('compression')
 const app = express()
 
+// proxy config:
+const proxyrouter = express.Router()
+const ProxyController = require('./server/controller/proxyroutes.js')
+ProxyController(proxyrouter)
 
+// server config:
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(compression({ threshold: 0 }))
-app.use('/api', routes)
+
+
+// start server:
+app.use('/api', proxyrouter)
 
 app.use(function (req, res, next) {
 	var err = new Error('This page not found');
