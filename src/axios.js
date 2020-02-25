@@ -11,7 +11,10 @@ const instance = axios.create();
 instance.defaults.headers.post['Content-Type'] = 'application/json'
 
 axios.interceptors.request.use = instance.interceptors.request.use
+
+// 加载自定义 client 端发出的 request (GET/POST) 的 header 内容 
 instance.interceptors.request.use(config => {
+	// 将 server 返回的 JWT 的 token 追加在 request (GET) 的 header
 	if(localStorage.getItem('token')) {
 		config.headers.Authorization = `token ${localStorage.getItem('token')}`
 			.replace(/(^\")|(\"$)/g, '')

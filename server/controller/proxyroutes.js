@@ -1,11 +1,11 @@
 // const express = require('express')
-const model = require('../db/db.js')
 // const router = express.Router()
+const model = require('../db/db.js')
 const moment = require('moment')
 const objectIdToTimestamp = require('objectid-to-timestamp')
 const createToken = require('../middleware/createToken.js')
-const sha1 = require('sha1')
 const checkToken = require('../middleware/checkToken.js')
+const sha1 = require('sha1')
 
 // 注册
 const Register = (req, res) => {
